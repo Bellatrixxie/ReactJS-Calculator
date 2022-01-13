@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* I attempted using SASS by copying this file to a new index.scss file
+and adding the SASS variables below. 
+However, there was a conflict with the node_modules,
+so I guess it doesn't work with create-react-app */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* $main-color: aquamarine;
+$border-color: yellow;
+$text-color: rgb(12, 83, 72);
+$display-color: #f6ffa4;
+$shadow-color: hsla(305, 100%, 70%, 0.6);
+$background-color: rgb(6, 40, 35); */
+
+body {
+  background-color: rgb(6, 40, 35);
+  color: white;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#calculator {
+  padding: 5%;
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(5, 80px);
+  grid-gap: 6px;
+  border-radius: 5px;
+}
+.number, .operator, #clear, #equals {
+  padding: 20%;
+  margin: 1%;
+  background-color:aquamarine;
+  color: rgb(12, 83, 72);
+  border: 3px solid yellow;
+  border-radius: 1px;
+  font-size: 1.6rem;
+  box-shadow: 3px 3px 3px 1px hsla(305, 100%, 70%, 0.6);
+}
+#zero {
+  grid-area: 1/2/2/3;
+}
+#decimal {
+  grid-area: 1/3/2/4;
+}
+#one {
+  grid-area: 2/1/3/2;
+}
+#two {
+  grid-area: 2/2/3/3;
+}
+#three {
+  grid-area: 2/3/3/4;
+}
+#four {
+  grid-area: 3/1/4/2;
+}
+#five {
+  grid-area: 3/2/4/2;
+}
+#six {
+  grid-area: 3/3/4/4;
+}
+#seven {
+  grid-area: 4/1/5/2;
+}
+#eight {
+  grid-area: 4/2/5/3;
+}
+#nine{
+  grid-area: 4/3/5/4;
+}
+#add {
+ grid-area: 1/4/2/5;
+}
+#substract {
+  grid-area: 2/4/3/5;
+}
+#multiply {
+  grid-area: 3/4/4/5;
+}
+#divide {
+  grid-area: 4/4/5/5;
+}
+#clear {
+  grid-area: 1/1/2/2;
+}
+#equals {
+  grid-area: 5/1/6/2;
+}
+#display {
+  width: 95.5%;
+  height: 85%;
+  color: rgb(12, 83, 72);
+  border-radius: 1px;
+  background-color: #f6ffa4;
+  font-size: 1.6rem;
+  font-weight: 300;
+  border: 5px solid aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: -30%;
+  left: 0.25%;
+  grid-area: 5/2/6/5;
+  box-shadow: 3px 3px 3px 1px hsla(305, 100%, 70%, 0.6);
+}
+#state {
+  width: 336px;
+  height: 45px;
+  background-color:aquamarine;
+  color: rgb(12, 83, 72);
+  border: 3px solid yellow;
+  border-radius: 1px;
+  font-size: 1.4rem;
+  margin-top: -2%;
+  letter-spacing: 5px;
+  box-shadow: 3px 3px 3px 1px hsla(305, 100%, 70%, 0.6);
+}
+@media (max-width:450px) {
+  #calculator {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 4px;
+  }
+  #state {
+    width: 200px;
+    font-size: 1.2rem;
+  }
+  #display {
+    width: 94.5%;
+    height: 80.5%;
+    top: -40.5%;
+  }
 }
